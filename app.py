@@ -5,7 +5,6 @@ import pandas as pd
 
 # Initialize Flask app
 app = Flask(__name__)
-print("Flask version :" , flask.__version__)
 # Load the trained model and scaler
 with open('rf_reg.pkl', 'rb') as f:
     model = pickle.load(f)
