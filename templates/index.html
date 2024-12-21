@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        select, input {
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Laptop Price Predictor</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="ram">RAM (GB):</label>
+                <select id="ram" name="ram">
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="8">8</option>
+                    <option value="16">16</option>
+                    <option value="24">24</option>
+                    <option value="32">32</option>
+                    <option value="64">64</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" step="0.1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ppi">Pixels Per Inch (PPI):</label>
+                <input type="number" id="ppi" name="ppi" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hdd">HDD (GB):</label>
+                <select id="hdd" name="hdd">
+                    <option value="0">0</option>
+                    <option value="32">32</option>
+                    <option value="128">128</option>
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ssd">SSD (GB):</label>
+                <select id="ssd" name="ssd">
+                    <option value="0">0</option>
+                    <option value="8">8</option>
+                    <option value="16">16</option>
+                    <option value="32">32</option>
+                    <option value="128">128</option>
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="company">Company:</label>
+                <select id="company" name="company">
+                    <option value="Dell">Dell</option>
+                    <option value="HP">HP</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Lenovo">Lenovo</option>
+                    <option value="Asus">Asus</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="type_name">Type:</label>
+                <select id="type_name" name="type_name">
+                    <option value="Notebook">Notebook</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="Ultrabook">Ultrabook</option>
+                    <option value="2 in 1 Convertible">2 in 1 Convertible</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cpu_brand">CPU Brand:</label>
+                <select id="cpu_brand" name="cpu_brand">
+                    <option value="Intel">Intel</option>
+                    <option value="AMD">AMD</option>
+                    <option value="Apple">Apple</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="gpu_brand">GPU Brand:</label>
+                <select id="gpu_brand" name="gpu_brand">
+                    <option value="NVIDIA">NVIDIA</option>
+                    <option value="AMD">AMD</option>
+                    <option value="Intel">Intel</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="os">Operating System:</label>
+                <select id="os" name="os">
+                    <option value="Windows">Windows</option>
+                    <option value="Mac">Mac</option>
+                    <option value="Linux">Linux</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict Price</button>
+        </form>
+    </div>
+</body>
+</html>
